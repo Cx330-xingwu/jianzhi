@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专属健康方案：超重+胃炎胰腺炎+油皮痘肌</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #FFFFFF;
+        }
+
+        .card {
+            background-color: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 1.25rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .highlight-gradient-blue {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0), rgba(59, 130, 246, 0.05));
+        }
+
+        .highlight-gradient-green {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0), rgba(16, 185, 129, 0.05));
+        }
+
+        .highlight-gradient-purple {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0), rgba(139, 92, 246, 0.05));
+        }
+
+        .highlight-gradient-red {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0), rgba(239, 68, 68, 0.05));
+        }
+
+        .highlight-gradient-orange {
+            background: linear-gradient(135deg, rgba(249, 115, 22, 0), rgba(249, 115, 22, 0.05));
+        }
+
+        .highlight-gradient-teal {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0), rgba(20, 184, 166, 0.05));
+        }
+    </style>
+</head>
+
+<body class="bg-white">
+    <div class="max-w-7xl mx-auto p-4 md:p-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
+
+            <!-- 标题卡片 -->
+            <div class="card md:col-span-4 p-8 flex flex-col justify-center items-center text-center">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative z-10">
+                    <div
+                        class="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-4">
+                        <i class="fa-solid fa-user-doctor mr-2"></i>
+                        定制化健康方案
+                    </div>
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-3 leading-tight">
+                        超重+胃炎胰腺炎+油皮痘肌
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-4">
+                        协同健康全指南
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-4xl mx-auto">
+                        针对BMI 28.6、通勤步行、胃炎胰腺炎、油皮脓疱痘的综合解决方案，遵循温和减脂+护胃养胰+抗炎护肤的协同逻辑
+                    </p>
+                </div>
+            </div>
+
+            <!-- BMI与风险卡片 -->
+            <div class="card md:col-span-2 md:row-span-2 p-8 flex flex-col justify-between">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-red"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-heart-pulse text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">BMI与健康风险</h3>
+                    </div>
+                    <div class="flex items-end space-x-4 mb-6">
+                        <div class="text-7xl font-bold text-red-600">28.6</div>
+                        <div class="text-gray-600 pb-2">
+                            <div class="text-lg font-semibold">肥胖前期</div>
+                            <div class="text-sm">接近轻度肥胖</div>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <i class="fa-solid fa-circle-exclamation text-red-500 mt-1 mr-3"></i>
+                            <div>
+                                <div class="font-semibold text-gray-900">膝关节风险</div>
+                                <div class="text-gray-600 text-sm">跑跳类运动磨损风险比正常体重高3-5倍</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fa-solid fa-circle-exclamation text-red-500 mt-1 mr-3"></i>
+                            <div>
+                                <div class="font-semibold text-gray-900">胰腺负担</div>
+                                <div class="text-gray-600 text-sm">内脏脂肪浸润，脂肪性胰腺炎发生率高2.7倍</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fa-solid fa-circle-exclamation text-red-500 mt-1 mr-3"></i>
+                            <div>
+                                <div class="font-semibold text-gray-900">饮食禁忌</div>
+                                <div class="text-gray-600 text-sm">严格限脂(≤40g/日)，禁止断食和酒精</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative z-10 h-64 mt-6">
+                    <canvas id="bmiChart"></canvas>
+                </div>
+            </div>
+
+            <!-- 皮肤状态卡片 -->
+            <div class="card md:col-span-2 p-8 flex flex-col">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-purple"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-pimple text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">皮肤状态</h3>
+                    </div>
+                    <div class="mb-6">
+                        <div class="text-4xl font-bold text-purple-600 mb-2">中度痤疮</div>
+                        <div class="text-gray-600">油皮脓疱性红肿痘痘</div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-purple-200 rounded-full mr-3"></div>
+                            <div class="text-gray-700">油脂分泌过多</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-purple-200 rounded-full mr-3"></div>
+                            <div class="text-gray-700">毛囊口角化异常</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-purple-200 rounded-full mr-3"></div>
+                            <div class="text-gray-700">痤疮丙酸杆菌繁殖</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-purple-200 rounded-full mr-3"></div>
+                            <div class="text-gray-700">炎症因子刺激</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 消化系统卡片 -->
+            <div class="card md:col-span-2 p-8 flex flex-col">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-orange"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-stomach text-orange-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">消化系统健康</h3>
+                    </div>
+                    <div class="mb-6">
+                        <div class="text-2xl font-bold text-orange-600 mb-2">胃炎 + 胰腺炎</div>
+                        <div class="text-gray-600">消化液分泌节律紊乱</div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-orange-200 rounded-full mr-3"></div>
+                            <div class="text-gray-700">胃酸分泌异常</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-orange-200 rounded-full mr-3"></div>
+                            <div class="text-gray-700">胰液排出障碍</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-orange-200 rounded-full mr-3"></div>
+                            <div class="text-gray-700">胃黏膜慢性炎症</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-4 h-4 bg-orange-200 rounded-full mr-3"></div>
+                            <div class="text-gray-700">胰腺自身消化风险</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 饮食核心框架卡片 -->
+            <div class="card md:col-span-4 p-8">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-green"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-utensils text-green-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">饮食核心框架：改良版211饮食法</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="bg-white/50 rounded-xl p-6 flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-carrot text-green-600 text-2xl"></i>
+                            </div>
+                            <div class="text-2xl font-bold text-green-600 mb-2">2拳</div>
+                            <div class="font-semibold text-gray-900 mb-2">低纤维蔬菜</div>
+                            <div class="text-gray-600 text-sm">冬瓜、黄瓜、西葫芦等，优先熟吃，降低消化负担</div>
+                        </div>
+                        <div class="bg-white/50 rounded-xl p-6 flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-drumstick-bite text-green-600 text-2xl"></i>
+                            </div>
+                            <div class="text-2xl font-bold text-green-600 mb-2">1拳</div>
+                            <div class="font-semibold text-gray-900 mb-2">低脂蛋白</div>
+                            <div class="text-gray-600 text-sm">去皮鸡胸肉、低脂鱼虾、鸡蛋等，避免刺激胰腺</div>
+                        </div>
+                        <div class="bg-white/50 rounded-xl p-6 flex flex-col items-center text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4">
+                                <i class="fa-solid fa-bread-slice text-green-600 text-2xl"></i>
+                            </div>
+                            <div class="text-2xl font-bold text-green-600 mb-2">1拳</div>
+                            <div class="font-semibold text-gray-900 mb-2">低GI主食</div>
+                            <div class="text-gray-600 text-sm">红薯、土豆、糙米等，稳定血糖，减少胰岛素波动</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-green-50 rounded-xl p-4">
+                        <div class="font-semibold text-green-800 mb-2">进食顺序：先蔬菜 → 再蛋白 → 最后主食</div>
+                        <div class="text-green-700 text-sm">通过高纤维蔬菜提前占据胃容量实现温和热量缺口(300-500大卡)，延缓碳水吸收，减少对胰腺的刺激</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 运动计划卡片 -->
+            <div class="card md:col-span-2 p-8">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-blue"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-person-running text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">5㎡单间专属运动计划</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between bg-white/50 rounded-lg p-4">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-clock text-blue-600 mr-3"></i>
+                                <span class="font-semibold text-gray-900">每周运动</span>
+                            </div>
+                            <span class="text-2xl font-bold text-blue-600">2天</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-white/50 rounded-lg p-4">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-hourglass-half text-blue-600 mr-3"></i>
+                                <span class="font-semibold text-gray-900">每次时长</span>
+                            </div>
+                            <span class="text-2xl font-bold text-blue-600">3小时</span>
+                        </div>
+                        <div class="flex items-center justify-between bg-white/50 rounded-lg p-4">
+                            <div class="flex items-center">
+                                <i class="fa-solid fa-fire text-blue-600 mr-3"></i>
+                                <span class="font-semibold text-gray-900">碎片化活动</span>
+                            </div>
+                            <span class="text-2xl font-bold text-blue-600">200-300kcal</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 space-y-3">
+                        <div class="flex items-start">
+                            <div
+                                class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                <i class="fa-solid fa-check text-blue-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">低冲击有氧</div>
+                                <div class="text-gray-600 text-sm">Jo姐30分钟趣味有氧、安娜简化版HIIT</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                <i class="fa-solid fa-check text-blue-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">核心激活</div>
+                                <div class="text-gray-600 text-sm">宿舍站立瘦马甲线、仰卧交替触脚</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center mt-0.5 mr-3 flex-shrink-0">
+                                <i class="fa-solid fa-check text-blue-600 text-xs"></i>
+                            </div>
+                            <div>
+                                <div class="font-semibold text-gray-900">关节保护</div>
+                                <div class="text-gray-600 text-sm">靠墙静蹲、椅上伸膝等低冲击动作</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 护肤方案卡片 -->
+            <div class="card md:col-span-2 p-8">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-purple"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-spa text-purple-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">油皮脓疱痘护肤方案</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-white/50 rounded-lg p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-purple-600 font-bold text-sm">1</span>
+                                </div>
+                                <h4 class="font-semibold text-gray-900">急性期：医学治疗</h4>
+                            </div>
+                            <div class="text-gray-600 text-sm ml-11">
+                                班赛过氧苯甲酰凝胶(OTC)、夫西地酸乳膏，口服多西环素/米诺环素(遵医嘱)
+                            </div>
+                        </div>
+                        <div class="bg-white/50 rounded-lg p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-purple-600 font-bold text-sm">2</span>
+                                </div>
+                                <h4 class="font-semibold text-gray-900">极简护肤</h4>
+                            </div>
+                            <div class="text-gray-600 text-sm ml-11">
+                                氨基酸洁面、神经酰胺/泛醇保湿、无油物化防晒，避免刺激
+                            </div>
+                        </div>
+                        <div class="bg-white/50 rounded-lg p-4">
+                            <div class="flex items-center mb-2">
+                                <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                                    <span class="text-purple-600 font-bold text-sm">3</span>
+                                </div>
+                                <h4 class="font-semibold text-gray-900">维稳期：屏障修复</h4>
+                            </div>
+                            <div class="text-gray-600 text-sm ml-11">
+                                积雪草苷精华、控油修护水乳、低浓度水杨酸(≤2%)，预防复发
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 关键数据卡片 -->
+            <div class="card md:col-span-4 p-8">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-teal"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-chart-line text-teal-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">关键数据指标</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                        <div class="bg-white/50 rounded-xl p-6 flex flex-col items-center text-center">
+                            <div class="text-4xl font-bold text-teal-600 mb-2">≤40g</div>
+                            <div class="font-semibold text-gray-900 mb-1">每日脂肪摄入</div>
+                            <div class="text-gray-600 text-sm">保护胰腺，减少刺激</div>
+                        </div>
+                        <div class="bg-white/50 rounded-xl p-6 flex flex-col items-center text-center">
+                            <div class="text-4xl font-bold text-teal-600 mb-2">300-500</div>
+                            <div class="font-semibold text-gray-900 mb-1">每日热量缺口(kcal)</div>
+                            <div class="text-gray-600 text-sm">温和减脂，避免过度负担</div>
+                        </div>
+                        <div class="bg-white/50 rounded-xl p-6 flex flex-col items-center text-center">
+                            <div class="text-4xl font-bold text-teal-600 mb-2">0.5-1kg</div>
+                            <div class="font-semibold text-gray-900 mb-1">每月减重目标</div>
+                            <div class="text-gray-600 text-sm">安全减重，保护代谢</div>
+                        </div>
+                        <div class="bg-white/50 rounded-xl p-6 flex flex-col items-center text-center">
+                            <div class="text-4xl font-bold text-teal-600 mb-2">6-12月</div>
+                            <div class="font-semibold text-gray-900 mb-1">护肤维稳期</div>
+                            <div class="text-gray-600 text-sm">屏障修复，预防复发</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 工具使用卡片 -->
+            <div class="card md:col-span-4 p-8">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-orange"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-mobile-screen-button text-orange-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">工具使用指南</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <i class="fa-solid fa-dumbbell text-orange-600 text-2xl mr-3"></i>
+                                <h4 class="text-lg font-bold text-gray-900">Keep使用技巧</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-search text-orange-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">课程搜索</div>
+                                        <div class="text-gray-600 text-sm">搜索"小空间无器械"、"宿舍燃脂"、"低冲击有氧"</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-sync text-orange-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">数据同步</div>
+                                        <div class="text-gray-600 text-sm">训练数据同步至薄荷健康APP，自动计算消耗</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-calendar-check text-orange-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">进度跟踪</div>
+                                        <div class="text-gray-600 text-sm">设置每周目标，通过训练日历记录完成情况</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <i class="fa-solid fa-apple-whole text-orange-600 text-2xl mr-3"></i>
+                                <h4 class="text-lg font-bold text-gray-900">薄荷健康使用技巧</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-user-cog text-orange-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">基础设置</div>
+                                        <div class="text-gray-600 text-sm">准确输入身高体重，获取每日推荐热量(1900-2100大卡)</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-camera-retro text-orange-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">饮食记录</div>
+                                        <div class="text-gray-600 text-sm">优先使用条码扫描功能，自制食物按实际重量记录</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fa-solid fa-balance-scale text-orange-500 mt-1 mr-3"></i>
+                                    <div>
+                                        <div class="font-semibold text-gray-900">热量平衡</div>
+                                        <div class="text-gray-600 text-sm">监控热量摄入-消耗差值，确保300-500大卡缺口</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 注意事项卡片 -->
+            <div class="card md:col-span-4 p-8">
+                <div class="absolute top-0 left-0 w-full h-full highlight-gradient-red"></div>
+                <div class="relative z-10">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fa-solid fa-shield-halved text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900">关键补充注意事项</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white/50 rounded-xl p-6">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-scale-balanced text-red-600 text-xl mr-3"></i>
+                                <h4 class="font-bold text-gray-900">体重监测频率</h4>
+                            </div>
+                            <div class="text-gray-600 text-sm">
+                                每周仅需在固定时间(如周日晨起空腹)称1次体重+测腰围，避免因短期波动焦虑
+                            </div>
+                        </div>
+                        <div class="bg-white/50 rounded-xl p-6">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-triangle-exclamation text-red-600 text-xl mr-3"></i>
+                                <h4 class="font-bold text-gray-900">症状预警与处理</h4>
+                            </div>
+                            <div class="text-gray-600 text-sm">
+                                若出现上腹痛、恶心、反酸、腹胀等症状，需立即停止当前饮食与运动，改为清淡流质饮食
+                            </div>
+                        </div>
+                        <div class="bg-white/50 rounded-xl p-6">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-gauge-simple text-red-600 text-xl mr-3"></i>
+                                <h4 class="font-bold text-gray-900">减重速度要求</h4>
+                            </div>
+                            <div class="text-gray-600 text-sm">
+                                每月减重0.5-1kg是安全标准，过快减重可能导致肌肉流失、基础代谢下降等健康问题
+                            </div>
+                        </div>
+                        <div class="bg-white/50 rounded-xl p-6">
+                            <div class="flex items-center mb-3">
+                                <i class="fa-solid fa-sync-alt text-red-600 text-xl mr-3"></i>
+                                <h4 class="font-bold text-gray-900">协同效应强化</h4>
+                            </div>
+                            <div class="text-gray-600 text-sm">
+                                保持规律作息，每日23:00前入睡，稳定瘦素分泌，减少皮质醇，强化减脂与护肤协同效果
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    // BMI图表
+    const bmiCtx = document.getElementById('bmiChart').getContext('2d');
+    const bmiChart = new Chart(bmiCtx, {
+        type: 'bar',
+        data: {
+            labels: ['BMI 18.5', 'BMI 24', 'BMI 28', '你的BMI'],
+            datasets: [{
+                label: 'BMI分类',
+                data: [18.5, 24, 28, 28.6],
+                backgroundColor: [
+                    'rgba(16, 185, 129, 0.2)',
+                    'rgba(59, 130, 246, 0.2)',
+                    'rgba(249, 115, 22, 0.2)',
+                    'rgba(239, 68, 68, 0.4)'
+                ],
+                borderColor: [
+                    'rgba(16, 185, 129, 1)',
+                    'rgba(59, 130, 246, 1)',
+                    'rgba(249, 115, 22, 1)',
+                    'rgba(239, 68, 68, 1)'
+                ],
+                borderWidth: 2
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function (context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            if (context.parsed.y !== null) {
+                                label += context.parsed.y;
+                                if (context.dataIndex === 0) label += ' (偏瘦)';
+                                if (context.dataIndex === 1) label += ' (正常)';
+                                if (context.dataIndex === 2) label += ' (超重)';
+                                if (context.dataIndex === 3) label += ' (肥胖前期)';
+                            }
+                            return label;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 35,
+                    ticks: {
+                        stepSize: 5
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+</html>
